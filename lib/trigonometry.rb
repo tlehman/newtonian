@@ -1,11 +1,11 @@
 module Trigonometry
   refine Numeric do
     def degrees
-      self * (180/Math::PI)
+      (self*Math::PI / 180.0)
     end
 
     def radians
-      (self*Math::PI / 180.0)
+      self * (180/Math::PI)
     end
   end
 end
