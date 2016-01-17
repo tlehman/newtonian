@@ -2,7 +2,15 @@
 
 Newtonian physics gives a way to predict the future state of a system of massive objects in a Euclidean space. This gem provides a library of classes such as Point, Vector, Force. This gem enables a system built from these classes to be evolved forward in time according to Newton's laws of motion.
 
-Note: all bold quantities are vectors.
+Note: all bold quantities are vectors. SI units are assumed everywhere, here's a brief list in case you don't remember all the SI units:
+
+ - Time is measured in seconds (s)
+ - Length is measured in meters (m)
+ - Mass is measured in kilograms (kg)
+
+There are more, but none are relevant to the newtonian library, it only deals with space, time and mass.
+
+The unit for force is sometimes abbreviated (N), as Newtons, but it is defined in terms of kilograms, meters and seconds.
 
 ## Newton's laws of motion
 
@@ -40,9 +48,11 @@ Where (d/dt) means the "rate of change with respect to time". If you are not fam
 
 Given two objects with masses m<sub>1</sub> and m<sub>2</sub>, the force of gravity on object two from object one is:
 
-**F<sub>21</sub>** = (Gm<sub>1</sub>m<sub>2</sub>/r<sup>2</sup>)**r<sub>21</sub>**
+**F<sub>21</sub>** = (Gm<sub>1</sub>m<sub>2</sub>/r<sup>2</sup>)**r&#770;<sub>21</sub>**
 
-Where r = ||**r<sub>21</sub>**||   (the norm (length) of the vector from object 2 to object 1)
+Where r = ||**r<sub>21</sub>**||   (the norm (length) of the vector from object 2 to object 1), and
+
+**r&#770;<sub>21</sub>** is a vector in the direction of **r<sub>21</sub>**, but with a magnitude (norm) of 1.
 
 And G is the gravitational constant:  6.673×10<sup>−11</sup> N (m/kg)<sup>2</sup>
 
