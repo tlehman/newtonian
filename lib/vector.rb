@@ -9,6 +9,20 @@ class Vector
     @components.length
   end
 
+  def +(vector)
+    if vector.dimension != dimension
+      raise Newtonian::DimensionError
+    end
+
+    Vector.new(components.zip(vector.components).map {|(vi,wi)| vi+wi })
+  end
+
+  def ==(vector)
+    return false if vector.dimension != dimension
+
+    components == vector.components
+  end
+
   def norm
     Math.sqrt(dot(self))
   end

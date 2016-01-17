@@ -4,6 +4,16 @@ using Trigonometry
 describe Vector do
   let(:velocity) { Vector.new([3.0, -4.0]) }
 
+  describe "#+" do
+    let(:three) { Vector.new([3.0, 0.0]) }
+    let(:four) { Vector.new([0.0, 4.0]) }
+    let(:five) { Vector.new([3.0, 4.0]) }
+
+    it "works" do
+      expect(three + four).to eq(five)
+    end
+  end
+
   describe "#norm" do
     it "has a norm" do
       expect(velocity.norm).to eq(5.0)
