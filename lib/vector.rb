@@ -17,6 +17,10 @@ class Vector
     Vector.new(components.zip(vector.components).map {|(vi,wi)| vi+wi })
   end
 
+  def *(scalar)
+    Vector.new(components.map{|c| scalar*c })
+  end
+
   def ==(vector)
     return false if vector.dimension != dimension
 

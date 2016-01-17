@@ -4,13 +4,21 @@ using Trigonometry
 describe Vector do
   let(:velocity) { Vector.new([3.0, -4.0]) }
 
-  describe "#+" do
+  describe "vector addition" do
     let(:three) { Vector.new([3.0, 0.0]) }
     let(:four) { Vector.new([0.0, 4.0]) }
     let(:five) { Vector.new([3.0, 4.0]) }
 
     it "works" do
       expect(three + four).to eq(five)
+    end
+  end
+
+  describe "scalar multiplication" do
+    it "works" do
+      expect( Vector.new([1.0, 1.0, 0.5]) * 2.1 ).to eq(
+        Vector.new([2.1, 2.1, 1.05])
+      )
     end
   end
 
