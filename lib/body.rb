@@ -8,4 +8,11 @@ class Body
     @velocity = velocity.is_a?(Vector) ? velocity : Vector.new(velocity)
   end
 
+  def force_from(body)
+    rvec = body.position - position
+    r = rvec.norm
+    rhat = rvec * (1/r)
+    rhat * (Newtonian.G * mass * body.mass / r**2)
+  end
+
 end
