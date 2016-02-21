@@ -17,6 +17,10 @@ class Vector
     Vector.new(components.zip(vector.components).map {|(vi,wi)| vi+wi })
   end
 
+  def -(vector)
+    self + (vector * -1)
+  end
+
   def *(scalar)
     Vector.new(components.map{|c| scalar*c })
   end

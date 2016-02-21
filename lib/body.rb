@@ -4,7 +4,7 @@ class Body
 
   def initialize(mass:, position:, velocity:)
     @mass = mass
-    @position = position.is_a?(Point) ? position : Point.new(position)
+    @position = position.is_a?(Vector) ? position : Vector.new(position)
     @velocity = velocity.is_a?(Vector) ? velocity : Vector.new(velocity)
   end
 

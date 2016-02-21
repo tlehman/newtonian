@@ -18,9 +18,8 @@ describe Universe do
       it "updates the positions of all the bodies according to Newton's laws" do
         universe.evolve(dt)
         expect(universe.bodies.map(&:position)).to eq([
-          Point.new([]),
-          Point.new([]),
-        ])
+         Vector.new([0.9999999992922215, 2.9999999992922213]),
+         Vector.new([4.718523557537172e-10, 2.0000000004718523])])
       end
 
     end

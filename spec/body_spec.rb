@@ -8,7 +8,7 @@ describe Body do
   end
 
   it "has a position" do
-    expect(body.position).to be_a(Point)
+    expect(body.position).to be_a(Vector)
   end
 
   it "has an instaneous velocity" do

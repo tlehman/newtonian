@@ -9,6 +9,14 @@ class Point
     coordinates.length
   end
 
+  def +(vector)
+    if vector.dimension != dimension
+      raise Newtonian::DimensionError
+    end
+
+    Vector.new(coordinates.zip(vector.components).map {|(vi,wi)| vi+wi })
+  end
+
   def -(point)
     if point.dimension != dimension
       raise Newtonian::DimensionError
