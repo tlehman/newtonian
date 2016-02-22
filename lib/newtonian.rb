@@ -1,4 +1,4 @@
-require "newtonian/version"
+Dir["lib/*.rb"].each { |f| require "./#{f}" }
 
 module Newtonian
   class DimensionError < StandardError; end

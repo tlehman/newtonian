@@ -1,0 +1,37 @@
+* Object Oriented Orbits: simulating a universe in ruby
+
+To begin, we have a Universe, we initialize it to only have two objects
+of equal mass traveling opposite directions:
+
+
+   ^
+   | 
+   o-------o
+       r   |
+           v
+
+This should turn into a system resembling a pair of binary stars orbiting 
+each other.
+
+#+begin_src ruby
+require 'newtonian'
+
+m = 1
+p = Vector.new([-1,0])
+v = Vector.new([0,1])
+bodies = [
+  Body.new(mass: m, position: p, velocity: v),
+  Body.new(mass: m, position: p*(-1), velocity: v*(-1)),
+]
+universe = Universe.new(dimensions: 2, bodies: bodies)
+
+dt = 0.1
+100.times do
+  universe.evolve(dt)
+  puts universe.bodies.first.tap { |b| b.position.components }
+  puts universe.bodies.last.tap { |b| b.position.components }
+end
+#+end_src
+
+#+RESULTS:
+
