@@ -35,6 +35,14 @@ class Vector
     Math.sqrt(dot(self))
   end
 
+  def abs
+    norm
+  end
+
+  def to_a
+    components
+  end
+
   def dot(vector)
     if vector.dimension != dimension
       raise Newtonian::DimensionError

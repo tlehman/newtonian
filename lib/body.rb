@@ -15,4 +15,8 @@ class Body
     rhat * (Newtonian.G * mass * body.mass / r**2)
   end
 
+  def to_h
+    {m: mass, p: position.components, v: velocity.components}
+  end
+
 end

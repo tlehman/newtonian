@@ -22,6 +22,8 @@ describe Body do
     let(:rhat) { r12 * (1/r12.norm) }
     let(:body1) { body }
     let(:body2) { Body.new(mass: 83.6, position: [3,4], velocity: [0,0]) }
+    # f = G * m1m2 / r12**2
+    # f = 1 * 2 * 83.6 / 25.0
 
     it "calculates the force vector on self from the body in the args" do
       expected_force_12 = rhat*(Newtonian.G * m1 * m2 / (r12.norm**2))
@@ -29,7 +31,7 @@ describe Body do
     end
 
     it "gets the right value for the magnitude of the force" do
-      expect(body1.force_from(body2).norm).to be_within(10E-12).of(4.4629E-10)
+      expect(body1.force_from(body2).norm).to be_within(10E-12).of(6.688)
     end
   end
 

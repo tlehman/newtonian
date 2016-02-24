@@ -16,6 +16,14 @@ class Universe
     end
   end
 
+  def evolve_steps(dt, steps)
+    steps.times { evolve(dt) }
+  end
+
+  def to_a
+    @bodies.map(&:to_h)
+  end
+
   def self.big?
     true
   end
