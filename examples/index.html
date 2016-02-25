@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example uses of Newtonian</title>
+  </head>
+  <body>
+    <canvas id="canvas" width=800 height=800></canvas>
+    <script type="text/javascript">
+      var universe = document.getElementById("canvas");
+      
+      function display_circle(r, p) {
+          var color = '#555555';
+          var scale = 60;
+          var offset = 0.5*r;
+          var ctx = universe.getContext("2d");
+	  var x = scale * (p[0] + offset), y = scale * (p[1] + offset);
+          console.log("r = " + r + ", p = " + [x,y]);
+          ctx.beginPath();
+          ctx.moveTo(x+r,y);
+          ctx.arc(x,y,r,0,2*Math.PI,false);
+          ctx.fillStyle = color;
+          ctx.fill();
+          ctx.lineWidth = 3;
+          ctx.strokeStyle = color;
+          ctx.stroke();
+          ctx.closePath();
+      }
+
+      function clear_canvas() {
+         universe.width = universe.width;
+      }
+
+      // assuming radius is proportional to mass for now
+      // TODO: add radius metadata to Bodies
+      function display(data) {
+          clear_canvas();
+          for(i = 0; i < data.length; i++) {
+              var r = data[i].m;
+              var p = data[i].p;
+              display_circle(r, p);
+          }
+      }
+      
+      var ws = new WebSocket("ws://localhost:8080/");
+      ws.onmessage = function(event) {
+          var data = JSON.parse(event.data);
+          display(data);
+      }
+    </script>
+  </body>
+</html>
