@@ -14,7 +14,7 @@
           var scale = 60;
           var offset = 0.5*r;
           var ctx = universe.getContext("2d");
-	  var x = scale * (p[0] + offset), y = scale * (p[1] + offset);
+          var x = scale * (p[0] + offset), y = scale * (p[1] + offset);
           console.log("r = " + r + ", p = " + [x,y]);
           ctx.beginPath();
           ctx.moveTo(x+r,y);
@@ -28,6 +28,7 @@
       }
 
       function clear_canvas() {
+	     // TODO: store ring buffer of bodies, fade them or draw a line or something
          universe.width = universe.width;
       }
 
@@ -43,6 +44,8 @@
       }
       
       var ws = new WebSocket("ws://localhost:8080/");
+      ws.onopen = function (event) {
+      };
       ws.onmessage = function(event) {
           var data = JSON.parse(event.data);
           display(data);

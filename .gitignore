@@ -8,3 +8,5 @@
 /spec/reports/
 /tmp/
 *~
+bin/websocketd
+*.gem

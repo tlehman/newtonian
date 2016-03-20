@@ -1,3 +1,5 @@
+# Forks a web server into the background and then runs a WebSocket server
+# in the foreground, keep track of the pid for clean shutdown.
 require 'webrick'
 
 PORT = 8000
@@ -19,13 +21,7 @@ pid = fork do
   server.start
 end
 
-
-puts "after server starts up"
-wt.close
-rd.read(1)   # read a byte for the server start signal
-rd.close
-
-
+system("bin/websocketd -port=8080 ruby binary.rb")
 
 Process.kill('INT', pid)
 
