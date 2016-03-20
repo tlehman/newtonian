@@ -58,9 +58,15 @@ And G is the gravitational constant:  6.673×10<sup>−11</sup> N (m/kg)<sup>2</
 
 ![image of two massive bodies and their force on each other](img/f21_gravity.png)
 
-## Using this library to apply Newton's laws
+## Run example simulation
 
+Just type
 
+```
+$ make
+```
+
+And then open your browser to http://localhost:8000
 
 
 ## Installation
