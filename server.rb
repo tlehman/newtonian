@@ -21,7 +21,7 @@ pid = fork do
   server.start
 end
 
-examples = ["binary.rb", "ternary.rb", "figure_eight.rb"]
+examples = ["binary.rb", "ternary.rb", "random.rb", "figure_eight.rb"]
 index = ARGV.last.to_i
 system("bin/websocketd -port=8080 ruby #{examples[index]}")
 

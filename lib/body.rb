@@ -12,7 +12,12 @@ class Body
     rvec = body.position - position
     r = rvec.norm
     rhat = rvec * (1/r)
-    rhat * (Newtonian.G * mass * body.mass / r**2)
+    threshold = 0.1
+    if r < threshold
+      rhat*0
+    else
+      rhat * (Newtonian.G * mass * body.mass / r**2)
+    end
   end
 
   def to_h
