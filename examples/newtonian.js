@@ -39,7 +39,7 @@ function display_current() {
         display_circle(r(m), p, gray);
     }
 }
-var ws = new WebSocket("ws://hausdorff.local:8080/");
+var ws = new WebSocket("ws://localhost:8080/");
 ws.onopen = function (event) {};
 ws.onmessage = function(event) {
     current_state = JSON.parse(event.data);
