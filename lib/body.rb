@@ -1,3 +1,4 @@
+# typed: true
 class Body
   attr_reader :mass
   attr_accessor :position, :velocity

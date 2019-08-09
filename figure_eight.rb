@@ -1,3 +1,4 @@
+# typed: true
 # coding: utf-8
 # Figure eight orbit
 # from the paper by By Alain Chenciner and Richard Montgomery
@@ -36,5 +37,4 @@ module FigureEight
     end
   end
 end
-    
-FigureEight.run
+

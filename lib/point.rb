@@ -1,3 +1,4 @@
+# typed: true
 class Point
   attr_reader :coordinates
 

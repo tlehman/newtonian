@@ -1,3 +1,4 @@
+# typed: true
 # Binary object orbit, equal mass, opposite velocities
 # Nearly uniform circular motion
 require './lib/newtonian'
@@ -30,5 +31,3 @@ module BinaryStar
     end
   end
 end
-    
-BinaryStar.run

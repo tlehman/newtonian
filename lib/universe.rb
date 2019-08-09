@@ -1,3 +1,4 @@
+# typed: true
 class Universe
   attr_reader :dimensions, :bodies
 

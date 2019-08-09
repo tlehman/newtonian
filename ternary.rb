@@ -1,3 +1,4 @@
+# typed: true
 # Orbit around binary orbit
 require './lib/newtonian'
 require './lib/vector'
@@ -31,5 +32,4 @@ module ThreeBody
     end
   end
 end
-    
-ThreeBody.run
+

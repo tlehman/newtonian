@@ -1,3 +1,4 @@
+# typed: false
 module Trigonometry
   refine Numeric do
     def degrees

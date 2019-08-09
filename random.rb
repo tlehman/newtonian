@@ -1,3 +1,4 @@
+# typed: true
 # Random initial conditions
 # yolo
 require './lib/newtonian'
@@ -26,5 +27,3 @@ module RandomInit
     end
   end
 end
-    
-RandomInit.run
